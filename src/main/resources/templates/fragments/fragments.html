@@ -7,19 +7,19 @@
 		<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.bundle.min.css">
 		<link rel="stylesheet" href="/webjars/font-awesome/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 		<link rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-			crossorigin="anonymous"/>
+        href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+        crossorigin="anonymous"/>
 		<link rel="shortcut icon" th:href="@{/favicon.ico}" type="favicon">
 		<!--<title>E-ntervista</title> -->
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"
-			th:fragment="navbar">
-			<!-- Container wrapper -->
-			<div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav"
+        th:fragment="navbar">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
 				<!-- wrapper -->
 				<!-- logo div -->
 				<div class="collapse navbar-collapse justify-content-start">
@@ -33,14 +33,14 @@
 					<!-- links -->
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Registrar
 							</a>
 							<ul class="dropdown-menu">
 								<li>
 									<a class="dropdown-item" th:href="@{/home}">Registrar candidatos</a>
 								</li>
-								<li><a class="dropdown-item" href="#">Registrar preguntas</a></li>
+								<li><a class="dropdown-item" th:href="@{/questions}">Registrar preguntas</a></li>
 								<!-- <li><hr class="dropdown-divider"></li> -->
 								<li><a class="dropdown-item" href="#">Registrar áreas</a></li>
 							</ul>
@@ -56,16 +56,18 @@
 				</div>
 				<div class="collapse navbar-collapse justify-content-end">
 					<a th:href="@{/}">
-						<input type="button" class="btn btn-outline-danger" value="Encerrar sesión">
+                        <input type="button" class="btn btn-outline-danger" value="Encerrar sesión">
 					</a>
 				</div>
 				<!-- wrapper -->
 			</div>
 			<!-- Container wrapper -->
 		</nav>
-
+        
 		<script th:fragment="jsSrc" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 		<script th:fragment="jsSrc" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 		<script th:fragment="jsSrc" src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
-	</body>
+		<script th:fragment="jsSrc" src="/webjars/popper.js/2.9.3/umd/popper.min.js"></script>
+        <script th:fragment="fontawesome" src="/webjars/font-awesome/js/all.js"></script>
+    </body>
 </html>

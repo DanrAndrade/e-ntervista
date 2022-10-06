@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Luís">
+    <meta name="viewport" content="width=width-device, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.bundle.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="favicon">
+    <title>E-ntervista | Home</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: navbar"></div>
+
+
+    
+    <div class="container-fluid p-5">
+        <div class="row title mt-3">
+            <h4>Forma de pregunta</h4>
+        </div>
+        
+        <div class="col-xl-9">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Pergunta</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Sua pergunta...">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Resposta</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="row justify-content-start ps-2">
+                    <button type="submit" class="btn btn-primary mt-3 me-2 col-2">Guardar</button>
+                    <button type="submit" class="btn btn-danger mt-3 me-2 col-2">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div th:replace="fragments/fragments :: jsSrc"></div>
+</body>
+</html>
