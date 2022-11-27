@@ -53,7 +53,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `entervista`.`perguntas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `entervista`.`perguntas` (
-  `idPeguntas` INT NOT NULL,
+  `idPeguntas` INT NOT NULL AUTO_INCREMENT,
   `Perguntas` VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY (`idPeguntas`),
   UNIQUE INDEX `idPeguntas_UNIQUE` (`idPeguntas` ASC) ,
