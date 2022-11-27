@@ -18,7 +18,7 @@
 <div class="container-fluid p-5">
 
   <div class="row title mt-3 ms-5 mb-4">
-    <h4>Forma de persona</h4>
+    <h4>Formulario de edición</h4>
   </div>
 
   <div class="col-xl-9 offset-md-1">
@@ -101,19 +101,21 @@
       <!-- buttons -->
       <input th:value="(${candidato.id})" type="hidden" name="id">
       <button type="submit" class="btn btn-primary mt-3 me-2 col-2">Guardar</button>
-      <button type="reset" class="btn btn-danger mt-3 me-2 col-2">Cancelar</button>
-      <a th:href="@{candidates}">
-        <input type="button" value="Listar" class="btn btn-success mt-3 me-2 col-2">
+      <!-- <button type="reset" class="btn btn-danger mt-3 me-2 col-2">Cancelar</button> -->
+      <a th:href="@{/candidates}">
+        <input type="button" value="Cancelar" class="btn btn-danger mt-3 me-2 col-2">
       </a>
   </div>
-
-  <td th:text="(${candidato.id})"></td>
-  <td th:text="(${candidato.nombre})"></td>
-  <td th:text="(${candidato.apellido})"></td>
-  <td th:text="(${candidato.ocupacion})"></td>
-  <td th:text="(${candidato.numeroDeTelefono})"></td>
-  <td th:text="(${candidato.cumpleanos})"></td>
-  <td th:text="(${candidato.email})"></td>
+  
+  <div class="d-none">
+    <td th:text="(${candidato.id})"></td>
+    <td th:text="(${candidato.nombre})"></td>
+    <td th:text="(${candidato.apellido})"></td>
+    <td th:text="(${candidato.ocupacion})"></td>
+    <td th:text="(${candidato.numeroDeTelefono})"></td>
+    <td th:text="(${candidato.cumpleanos})"></td>
+    <td th:text="(${candidato.email})"></td>
+  </div>
 
   </form>
 </div>

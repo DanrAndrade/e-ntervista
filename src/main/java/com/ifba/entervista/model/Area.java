@@ -1,9 +1,9 @@
 package com.ifba.entervista.model;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -14,6 +14,8 @@ public class Area {
     @Column(name = "idArea", nullable = false)
     private long id;
 
+    @NotNull
+    @NotBlank
     @Column(name = "nombre")
     private String nome;
 
@@ -23,6 +25,5 @@ public class Area {
     }
 
     public Area(){
-
     }
 }

@@ -2,7 +2,6 @@ package com.ifba.entervista.controllers;
 
 import com.ifba.entervista.dao.AreaDAO;
 import com.ifba.entervista.model.Area;
-import com.ifba.entervista.model.Questions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,22 +26,28 @@ public class AreaControllers {
 
 
     @PostMapping(value = "/saveArea")
-    public ModelAndView saveArea(Area area) {
+    public ModelAndView saveArea(Area area) throws Exception {
         ModelAndView home = new ModelAndView("redirect:/area");
-        //verify if the email is already in the database
-        if(areaDAO.findByNome(area.getNome()) == null) {
-            areaDAO.save(area);
+        //verify if the area already exists
+        try{
+            if(areaDAO.findByNome(area.getNome()) == null) {
+                areaDAO.save(area);
+                return home;
+            }else{
+                home.addObject("error", "Area already exists");
+                return home;
+            }
+        }catch (Exception e){
+            home.addObject("error", "Error to save area");
             return home;
         }
-            return home;
-
     }
 
     @GetMapping(value = "/findArea")
     public ModelAndView findArea(Model model){
         ModelAndView area = new ModelAndView();
         area.setViewName("area/list_area");
-        List areas = areaDAO.findAll();
+        List<Area> areas = areaDAO.findAll();
         model.addAttribute("area", areas);
         return area;
     }
@@ -60,7 +65,7 @@ public class AreaControllers {
         ModelAndView areas = new ModelAndView();
         areaDAO.save(area);
         areas.setViewName("redirect:/findArea");
-        List a = areaDAO.findAll();
+        List<Area> a = areaDAO.findAll();
         model.addAttribute("area", a);
         return areas;
     }
@@ -70,7 +75,7 @@ public class AreaControllers {
         ModelAndView areas = new ModelAndView();
         areaDAO.deleteById(id);
         areas.setViewName("redirect:/findArea");
-        List a = areaDAO.findAll();
+        List<Area> a = areaDAO.findAll();
         model.addAttribute("area", a);
         return areas;
     }

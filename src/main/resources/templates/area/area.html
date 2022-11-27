@@ -29,7 +29,8 @@
           <div class="col-xl-6">
             <div class="form-group">
               <label for="nome" class="from-label">Area</label>
-              <input type="text" th:field="*{nome}" class="form-control" name="nome" placeholder="Area..." id="nome" required>
+              <input type="text" th:errorclass="is-invalid" th:field="*{nome}" class="form-control" name="nome" placeholder="Area..." id="nome" required>
+              <div class="invalid-feedback" th:errors="*{nome}">Campo vacío o área existente</div>
             </div>
           </div>
         </div>
